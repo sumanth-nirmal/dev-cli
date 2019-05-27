@@ -1,0 +1,10 @@
+*~
+*.sw[op]
+*.egg-info
+__pycache__/
+.eggs/
+.coverage
+/build/
+/dist/
+/venv/
+/.venv*/
