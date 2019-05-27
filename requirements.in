@@ -1,0 +1,5 @@
+cchardet
+click>=7.0
+aiodns
+aiohttp<3.5.0
+pdbpp
