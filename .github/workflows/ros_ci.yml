@@ -9,15 +9,16 @@ on:
 jobs:
   build:
     runs-on: ubuntu-18.04
-
+    env:
+      IMG_FLAVOUR: melodic-desktop
     steps:
     - uses: actions/checkout@v2
 
     - name: Build docker image
-      run: ./hooks/build.sh ros
+      run: ./hooks/build.sh ros $IMG_FLAVOUR
 
     - name: Login to DockerHub registry
       run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
 
     - name: Upload docker image to DockerHub registry
-      run: ./hooks/upload.sh ros
+      run: ./hooks/upload.sh ros $IMG_FLAVOUR 
