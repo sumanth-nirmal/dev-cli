@@ -1,0 +1,60 @@
+#common utilities
+bash-completion
+ccache
+chromium-browser
+clang
+clang-tidy
+curl
+doxygen
+emacs
+gdb
+git
+git-lfs
+git-gui
+graphviz
+jq
+libasio-dev
+libboost-all-dev
+libtinyxml-dev
+libtinyxml2-dev
+lcov
+less
+libpcap-dev
+man
+meld
+netcat
+openssh-client
+python-all
+python-empy
+python-pip
+python3-all
+python3-dev
+python3-empy
+python3-lxml
+python3-pip
+python3-setuptools
+python3-venv
+python3-yaml
+rsync
+screen
+ssh
+shellcheck
+strace
+sudo
+tcpdump
+tcpreplay
+tmux
+tshark
+vim
+
+# Bloom
+# Use the Python 2.x version of Bloom because of conflicts with catkin_pkg
+python-bloom
+
+# Node.js
+nodejs
+
+# ros dependecies
+libasio-dev
+libtinyxml2-dev
+

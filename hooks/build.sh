@@ -10,5 +10,5 @@ docker build \
    --label ade_image_commit_sha="$GITHUB_SHA" \
    --label ade_image_commit_tag="$GITHUB_REF" \
    -t "$1" \
-   --file $1
+   --file "$1"/Dockerfile
 
