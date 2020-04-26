@@ -1,0 +1,51 @@
+env:
+  global:
+    - MAINTAINER="Sumanth Nirmal<sumanth.724@gmail.com>"
+  matrix:
+    - DOCKER_BUILD=benzbrake/alpine:3.9-travis-demo
+      DEV-BASE-IMAGE-NAME=dev-base
+      ROS-IMAGE-NAME=ros
+      ROS-BRIDGE-IMAGE-NAME=ros1-bridge
+      ROS2-IMAGE-NAME=ros2
+      GAZEBO-IMAGE-NAME=gazebo
+
+sudo: required
+  
+services:
+  - docker
+
+stages:
+  - build
+  - upload
+
+jobs:
+  include:
+    - stage: "build"             
+      name: "dev-base-image"           
+      script: ./hooks/build.sh $DEV-BASE-IMAGE-NAME
+    - script: ./hooks/build.sh $ROS-IMAGE-NAME
+      name: "ros-image"  
+    - script: ./hooks/build.sh $ROS-BRIDGE-IMAGE-NAME
+      name: "ros1-bridge-image"  
+    - script: ./hooks/build.sh $ROS2-IMAGE-NAME
+      name: "ros2-image"  
+    - script: ./hooks/build.sh $GAZEBO-IMAGE-NAME
+      name: "gazebo-image"     
+    - stage: "upload"
+      name: "dev-base-upload"           
+      script: ./hooks/upload.sh $DEV-BASE-IMAGE-NAME
+    - script: ./hooks/upload.sh $ROS-IMAGE-NAME
+      name: "ros-upload" 
+    - script: ./hooks/upload.sh $ROS-BRIDGE-IMAGE-NAME
+      name: "ros1-bridge-upload" 
+    - script: ./hooks/upload.sh $ROS2-IMAGE-NAME
+      name: "ros2-upload" 
+    - script: ./hooks/upload.sh $GAZEBO-IMAGE-NAME
+      name: "gazebo-upload"  
+
+branches:
+  only:
+    - master
+
+notifications:
+  email: false
