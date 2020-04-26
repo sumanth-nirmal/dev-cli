@@ -16,7 +16,8 @@ jobs:
     - name: Build docker image
       run: ./hooks/build.sh ros
 
-    - name: Push docker image
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+    - name: Login to DockerHub registry
+      run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+
+    - name: Upload docker image to DockerHub registry
+      run: ./hooks/upload.sh ros

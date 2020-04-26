@@ -1,9 +1,3 @@
-echo $1
-echo $GITHUB_SHA
-echo $GITHUB_REF
-pwd
-ls
-
 # change to the directory where the Dockerfile exists
 cd $1
 docker build \
