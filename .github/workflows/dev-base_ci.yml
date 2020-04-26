@@ -16,7 +16,7 @@ jobs:
     - name: Build docker image
       run: ./hooks/build.sh dev-base
 
-    - name: Run a multi-line script
+    - name: Push docker image
       run: |
         echo Add other actions to build,
         echo test, and deploy your project.
