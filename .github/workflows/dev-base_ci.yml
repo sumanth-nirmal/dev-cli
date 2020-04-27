@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-18.04
     env:
       IMG_FLAVOUR: ""
+      DOCKER_REGISTRY: sumanthnirmal/ade-dev-base
     steps:
     - uses: actions/checkout@v2
 
@@ -21,4 +22,4 @@ jobs:
       run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
 
     - name: Upload docker image to DockerHub registry
-      run: ./hooks/upload.sh dev-base $IMG_FLAVOUR 
+      run: ./hooks/upload.sh dev-base "$IMG_FLAVOUR" "$DOCKER_REGISTRY"
