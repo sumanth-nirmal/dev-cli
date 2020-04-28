@@ -6,3 +6,4 @@ twine
 # Pin to a version before 3.7 to work around https://github.com/ament/ament_lint/pull/124
 flake8>=3.5,<3.7
 
+catkin_pkg==0.4.3

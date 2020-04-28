@@ -20,6 +20,10 @@ libtinyxml2-dev
 lcov
 less
 libpcap-dev
+locate
+libqt5widgets5
+liblog4cxx-dev
+libconsole-bridge-dev
 man
 meld
 netcat
@@ -27,10 +31,14 @@ openssh-client
 python-all
 python-empy
 python-pip
+python-netifaces 
+python-numpy
+python-defusedxml
 python3-all
 python3-dev
 python3-empy
 python3-lxml
+python3-numpy
 python3-pip
 python3-setuptools
 python3-venv
