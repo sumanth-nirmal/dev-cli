@@ -34,7 +34,7 @@ pycares==4.2.0
     # via aiodns
 pycparser==2.21
     # via cffi
-pygments==2.7.4
+pygments==2.15.0
     # via pdbpp
 typing-extensions==3.7.4.3
     # via aiohttp
