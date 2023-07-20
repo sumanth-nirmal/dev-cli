@@ -1,5 +1,5 @@
 cchardet
 click>=7.0
 aiodns
-aiohttp<3.8.0
+aiohttp<3.9.0
 pdbpp
